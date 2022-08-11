@@ -6,8 +6,8 @@ module.exports.home = function(req,res){
             console.log("Error in fetching notes");
             return;
         }
-        // res.setHeader('Access-Control-Allow-Origin', 'https://todo.shubhamgoel24.me');
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+        res.setHeader('Access-Control-Allow-Origin', 'https://notesshare.shubhamgoel24.me');
+        // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
         return res.status(200).json({
             note:notes
         });
@@ -20,8 +20,8 @@ module.exports.create_note= async function(req,res){
             description: req.body.description
         });
         
-        // res.setHeader('Access-Control-Allow-Origin', 'https://todo.shubhamgoel24.me');
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+        res.setHeader('Access-Control-Allow-Origin', 'https://notesshare.shubhamgoel24.me');
+        // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
         return res.status(200).json({
             data: {
                 note : note
@@ -50,8 +50,8 @@ module.exports.delete_note=function(req,res){
                 }
             });
         });
-        // res.setHeader('Access-Control-Allow-Origin', 'https://todo.shubhamgoel24.me');
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
+        res.setHeader('Access-Control-Allow-Origin', 'https://notesshare.shubhamgoel24.me');
+        // res.setHeader('Access-Control-Allow-Origin', 'http://localhost:8080');
         return res.status(200).json({
             message: "Deleted Sucessfully !"
         });

@@ -29,8 +29,8 @@ class App extends React.Component {
     }
 
     async componentDidMount(){
-        // const data = await axios.get('https://todo.shubhamgoel24.me/data');
-        const data = await axios.get('http://localhost:8005/data');
+        const data = await axios.get('https://notesshare.shubhamgoel24.me/data');
+        // const data = await axios.get('http://localhost:8005/data');
         this.setState({ 
             list : data.data.note,
             loading:false
@@ -42,8 +42,8 @@ class App extends React.Component {
         let newnoteForm = $('#new-note-form');
         await axios({
             method: 'post',
-            // url: 'https://todo.shubhamgoel24.me/create-note',
-            url: 'http://localhost:8005/create-note',
+            url: 'https://notesshare.shubhamgoel24.me/create-note',
+            // url: 'http://localhost:8005/create-note',
             data: newnoteForm.serialize(),
         })
         .then((response) => {
@@ -82,8 +82,8 @@ class App extends React.Component {
         var arrStr = encodeURIComponent(JSON.stringify(delarry));
         await axios({
             method: 'get',
-            // url: 'https://todo.shubhamgoel24.me/delete-note/?id=' + arrStr
-            url: 'http://localhost:8005/delete-note/?id=' + arrStr
+            url: 'https://notesshare.shubhamgoel24.me/delete-note/?id=' + arrStr
+            // url: 'http://localhost:8005/delete-note/?id=' + arrStr
         })
         .then((response) => {
             if(response.status === 200){
